@@ -53,6 +53,7 @@ if __name__ == '__main__':
     imgs_list = os.listdir(image_dir)
     imgs_list.sort()
     imgs_path = [os.path.join(image_dir, i) for i in imgs_list if i != 'outputs']
+    imgs_path = [x for x in imgs_path if '/.' not in x]
     image_dir_out = image_dir + '/outputs'
     os.makedirs(image_dir_out, exist_ok=True)
 
